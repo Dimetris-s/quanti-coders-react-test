@@ -1,0 +1,54 @@
+@import '../../../scss/mixin.scss';
+
+.Popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    @include pos0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &__body {
+        background-color: #fff;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.623);
+        border-radius: 8px;
+        padding: 55px 140px;
+        min-width: 600px;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transform: translateY(300px);
+        transition: transform 0.5s ease;
+        z-index: 150;
+
+       .Popup__close {
+           width: 35px;
+           height: 35px;
+           cursor: pointer;
+           position: absolute;
+           right: 0;
+           top: -60px;
+           background-image: url('../../../assets/icons/cross.png');
+           background-repeat: no-repeat;
+           background-position: center;
+           background-size: contain;
+       }
+    }
+
+
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+        .Popup__body {
+            transform: translateY(0);
+        }
+    }
+}
