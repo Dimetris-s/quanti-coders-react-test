@@ -1,0 +1,124 @@
+@import '../../scss/vars';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header {
+        row-gap: 25px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 15px;
+        row-gap: 35px;
+        margin-bottom: 75px;
+    }
+    &__title {
+        text-align: center;
+        color: $primary-color;
+        font-size: 64px;
+        font-weight: 900;
+
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        color: $primary-color;
+        font-weight: 300;
+    }
+    &__switch {
+        display: flex;
+        align-items: center;
+        border: 2px solid $primary-color;
+        border-radius: 8px;
+        align-self: center;
+        overflow: hidden;
+    }
+
+    &__variant {
+        padding: 10px 20px;
+        cursor: pointer;
+        &.active {
+            color: white;
+            background-color: $primary-color;
+        }
+        &:hover:not(.active) {
+            background-color: lighten($primary-color, 60%);
+        }
+    }
+    .Input {
+        // name
+        &:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        //surname
+        &:nth-child(2) {
+            grid-row: 1;
+            grid-column: 2;
+            
+        }
+        //company
+        &:nth-child(3) {
+            grid-row: 2;
+            grid-column: span 2;
+            
+        }
+        //file
+        &:nth-child(4) {
+            grid-row: 2;
+            grid-column: 3;
+            align-self: end;
+        }
+        //email
+        &:nth-child(5) {
+            grid-row: 3;
+            grid-column: span 2;
+            
+        }
+        //phone
+        &:nth-child(6) {
+            grid-row: 4;
+            grid-column: span 2;
+            
+        }
+        // country
+        &:nth-child(7) {
+            grid-row: 1;
+            grid-column: 5 / span 2;
+            
+        }
+        // city
+        &:nth-child(8) {
+            grid-row: 2;
+            grid-column: 5;
+            
+        }
+        //state
+        &:nth-child(9) {
+            grid-row: 2;
+            grid-column: 6;
+            
+        }
+        //address
+        &:nth-child(10) {
+            grid-row: 3;
+            grid-column: 5 / span 2;
+            
+        }
+        //index
+        &:nth-child(11) {
+            grid-row: 4;
+            grid-column: 5;
+            
+        }
+    }
+}

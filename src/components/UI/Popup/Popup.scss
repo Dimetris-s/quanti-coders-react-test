@@ -1,22 +1,31 @@
 @import '../../../scss/mixin.scss';
 
 .Popup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     position: fixed;
-    @include pos0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 
+    overflow-y: scroll;
+
     &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.692);
+        padding: 100px 20px;
+    }
+    &__content {
         background-color: #fff;
         box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.623);
         border-radius: 8px;
-        padding: 55px 140px;
+        padding: 55px 60px 55px 140px;
         min-width: 600px;
         position: relative;
 
@@ -24,23 +33,28 @@
         flex-direction: column;
         align-items: center;
 
-        transform: translateY(300px);
-        transition: transform 0.5s ease;
-        z-index: 150;
 
-       .Popup__close {
-           width: 35px;
-           height: 35px;
-           cursor: pointer;
-           position: absolute;
-           right: 0;
-           top: -60px;
-           background-image: url('../../../assets/icons/cross.png');
-           background-repeat: no-repeat;
-           background-position: center;
-           background-size: contain;
-       }
+        transition: transform 0.5s ease;
+
+        .Popup__close {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: -60px;
+            background-image: url('../../../assets/icons/cross.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            transition: transform 0.3s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
+
 
 
 

@@ -1,8 +1,0 @@
-@import '../../../scss/mixin.scss';
-
-.Backdrop {
-    position: fixed;
-    @include pos0;
-    background-color: rgba(0, 0, 0, 0.596);
-    z-index: 100;
-}

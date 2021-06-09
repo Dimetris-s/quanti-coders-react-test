@@ -1,15 +1,15 @@
 import React from "react";
 import  './Popup.scss'
 
-import Backdrop from '../Backdrop/Backdrop'
 
 const Popup = props => {
     return (
-        <div className="Popup">
-            <Backdrop/>
+        <div className="Popup active">
             <div className="Popup__body">
-                <span className="Popup__close"/>
-                {props.children}
+                <div className="Popup__content">
+                    <span className="Popup__close"/>
+                    {props.children}
+                </div>
             </div>
         </div>
     )
