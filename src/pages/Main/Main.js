@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import  './Main.scss'
 import Button from '../../components/UI/Button/Button'
+import { popupContext } from "../../context/popup/popupContext";
 
-const Main = props => {
+const Main = () => {
+    const {showModal} = useContext(popupContext)
     return (
         <div className="Main">
-            <Button text={"Popup"} appearance="gradient" size="lg"/>
+            <Button onClick={() => showModal()} text={"Popup"} appearance="gradient" size="lg"/>
         </div>
     )
 }

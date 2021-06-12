@@ -7,6 +7,10 @@ body {
 
 body {
     overflow-x: hidden;
+    &.popup__active {
+        height: 100vh;
+        overflow-y: hidden;
+    }
 }
 
 *,

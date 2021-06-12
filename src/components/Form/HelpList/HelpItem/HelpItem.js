@@ -3,7 +3,7 @@ import  './HelpItem.scss'
 
 const HelpItem = props => {
     return (
-        <li className="help-item">
+        <li className={props.active ? "help-item active" : "help-item"}>
             <div className="help-item__img">
                 <img src={props.img} alt={props.alt} />
             </div>

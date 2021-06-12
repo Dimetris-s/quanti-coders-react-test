@@ -20,9 +20,12 @@
         border-radius: 5px;
         display: block;
         width: 100%;
-        min-height: 200px;
         min-height: 20px;
         padding: 10px 15px;
+        outline: none;
+        &:focus {
+            box-shadow: 0px 0px 0px 3px #0C99E8;
+        }
     }
     &--file {
         justify-content: center;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({type, text, appearance, size}) => {
+const Button = ({onClick, type, text, appearance, size}) => {
 
     const btnType = type || 'button'
 
@@ -11,7 +11,7 @@ const Button = ({type, text, appearance, size}) => {
     ]
  
     return (
-        <button type={btnType} className={cls.join(' ')}>
+        <button onClick={onClick} type={btnType} className={cls.join(' ')}>
             {text}
         </button>
     )

@@ -3,6 +3,13 @@ import  './Form.scss'
 
 import Input from '../UI/Input/Input'
 import Button from '../UI/Button/Button'
+import Payment from "./Payment/Payment";
+import HelpList from "./HelpList/HelpList";
+
+import handImg from '../../assets/img/hand.png'
+import heartImg from '../../assets/img/heart.png'
+import clothesImg from '../../assets/img/clothes.png'
+import pocketImg from '../../assets/img/pocket.png'
 
 function createFormControl(type = 'text', label, value = '', placeholder = null) {
     return {
@@ -32,6 +39,16 @@ function createFormControls() {
 const Form = props => {
     
     const [formControls, setFormControls] = useState(createFormControls())
+    const [helpItems] = useState([
+        {id: 1, img: handImg, text: "Зробити", active: false},
+        {id: 2, img: pocketImg, text: "Фiнансова допомога", active: true},
+        {id: 3, img: clothesImg, text: "Матерiальна допомога", active: false},
+        {id: 4, img: heartImg, text: "Волонтерство", active: false},
+    ])
+
+    const submitHandler = event => {
+        event.preventDefault()
+    }
 
     const changeInputHandler = (value, controlName) => {
         const formControlscopy = {...formControls}
@@ -45,7 +62,7 @@ const Form = props => {
     }
 
     return (
-        <form className="form">
+        <form className="form" onSubmit={submitHandler}>
             <header className="form__header">
                 <h2 className="form__title">Заповнiть форму</h2>
                 <div className="form__switch">
@@ -75,17 +92,9 @@ const Form = props => {
             <footer className="form__footer">
                 <h2 className="form__title">Види допомоги</h2>
                 <h3 className="form__subtitle">Ви можете змiнити вид допомоги</h3>
-                <div className="form__help-options help-options">
-                    <div className="help-options__item">Зробити</div>
-                    <div className="help-options__item">Фiнансова допомога</div>
-                    <div className="help-options__item">Матерiальна допомога</div>
-                    <div className="help-options__item">Волонтерство</div>
-                </div>
-                <div className="payment">
-
-                </div>
-                <Button appearance="gradient" size="lg" text="Допомогти" type="submit"/>
-
+                <HelpList helpItems={helpItems}/>
+                <Payment />
+                <Button className="form__button" appearance="gradient" size="lg" text="Допомогти" type="submit"/>
             </footer>
         </form>
     )
